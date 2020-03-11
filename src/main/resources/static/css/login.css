@@ -4,6 +4,7 @@
 
 .btn-login{
   max-width: max-content;
+  min-width: min-content;
 }
 
 form {
@@ -14,6 +15,7 @@ form {
 
 input[type=text], input[type=password] {
   width: 100%;
+  min-width: 200px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
