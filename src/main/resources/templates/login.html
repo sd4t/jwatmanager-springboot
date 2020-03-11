@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1" />
-<link href="/css/login.css" rel="stylesheet" />
-<title>Login</title>
+    <meta charset="ISO-8859-1" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+    <link href="/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bootstrap/4.4.1-dist/css/bootstrap.min.css" />
+
+    <title>Login</title>
 </head>
+
 <body>
-	<h4>Here is login page</h4>
+
+    <div class="jumbotron text-center">
+        <h2>Welcome to JWAT Management System</h2>
+        <p>Have a nice day!</p>
+    </div>
+
+    <form action="action_page.php" method="post">
+        <div class="container" style="max-width:45%">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn-login">Login</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+
 </body>
+
 </html>
