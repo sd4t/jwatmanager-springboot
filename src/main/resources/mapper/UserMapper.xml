@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jwat.mapper.UserMapper">
+	<select id="getListUser" resultMap="result">
+		SELECT * FROM USERS;
+	</select>
+
+	<update id="updateUser" parameterType="integer">
+		update users set
+		username = #{username},
+		password = #{password},
+		email = #{email},
+		where id = #{id}
+	</update>
+
+	<resultMap id="result" type="com.jwat.model.User">
+	</resultMap>
+</mapper>
