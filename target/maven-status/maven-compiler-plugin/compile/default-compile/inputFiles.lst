@@ -1,5 +1,5 @@
-C:\Users\tuan.tran\Desktop\hoangtuan\source-code\jwatmanager-springboot\src\main\java\com\springboot\controller\Application.java
-C:\Users\tuan.tran\Desktop\hoangtuan\source-code\jwatmanager-springboot\src\main\java\com\springboot\controller\AppController.java
-C:\Users\tuan.tran\Desktop\hoangtuan\source-code\jwatmanager-springboot\src\main\java\com\springboot\dto\UserDTO.java
-C:\Users\tuan.tran\Desktop\hoangtuan\source-code\jwatmanager-springboot\src\main\java\com\springboot\mapper\UserMapper.java
-C:\Users\tuan.tran\Desktop\hoangtuan\source-code\jwatmanager-springboot\src\main\java\com\springboot\service\UserService.java
+E:\Eclipse\code\tht\src\main\java\com\jwat\service\UserService.java
+E:\Eclipse\code\tht\src\main\java\com\jwat\model\User.java
+E:\Eclipse\code\tht\src\main\java\com\jwat\jpa\UserRepository.java
+E:\Eclipse\code\tht\src\main\java\com\jwat\tht\Application.java
+E:\Eclipse\code\tht\src\main\java\com\jwat\controller\UserController.java
