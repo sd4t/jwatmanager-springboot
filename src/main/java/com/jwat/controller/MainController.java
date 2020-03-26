@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MainController {
-	@GetMapping("/")
+	@GetMapping("/index")
 	public String index() {
 		System.out.println("Index here");
-		return "good";
+		return "Return home page if you've logined, login page if not";
 	}
 }

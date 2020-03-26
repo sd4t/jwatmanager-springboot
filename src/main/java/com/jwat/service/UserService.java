@@ -22,8 +22,24 @@ public class UserService {
 		return userMapper.getListUser();
 	}
 
+	public int getUserIdByEmail(String email) throws Exception {
+		return userMapper.getUserIdByEmail(email);
+	}
+
+	public Boolean checkEmailAvailable(String email) throws Exception {
+		return userMapper.checkEmailAvailable(email);
+	}
+
 	@Transactional
 	public boolean insertUser(User user) throws Exception {
+		// String password = user.getPassword();
+		// BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		// password = encoder.encode(password);
+		// System.out.println(password);
+		// System.out.println(user);
+
+		// user.setPassword(password);
+
 		return userMapper.insertUser(user);
 	}
 
@@ -32,16 +48,21 @@ public class UserService {
 	}
 
 	@Transactional
-	public int deleteUserById(int id) throws Exception {
+	public Boolean deleteUserById(int id) throws Exception {
 		return userMapper.deleteUserById(id);
 	}
 
-	public boolean checkLogin(User user) {
+	@Transactional
+	public Boolean updateUser(User user) throws Exception {
+		return userMapper.updateUser(user);
+	}
+
+	public int checkLogin(User user) {
 		User usr = userMapper.checkLogin(user);
 		if (usr != null) {
-			System.out.println(usr.getId());
-			return true;
+			System.out.println("Service login check user_id="+usr.getId());
+			return usr.getId();
 		}
-		return false;
+		return -1;
 	}
 }

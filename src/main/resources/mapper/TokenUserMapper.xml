@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jwat.mapper.TokenUserMapper">
+	<insert id="createToken" parameterType="com.jwat.model.TokenUser">
+        insert into token_users(user_id, token, expires_at)
+        values(#{user_id}, #{token}, curdate() + 1)
+    </insert>
+
+	<resultMap id="result" type="com.jwat.model.TokenUser">
+		<result property = "user_id" column = "user_id"/>
+		<result property = "token" column = "token"/>
+		<result property = "expires_at" column = "expires_at"/>
+	</resultMap>
+</mapper>

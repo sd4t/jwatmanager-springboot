@@ -11,7 +11,9 @@ public interface UserMapper {
 	List<User> getListUser();
 	boolean insertUser(User user);
 	User getUserById(int id);
-	int deleteUserById(int id);
-	User updateUser(int id);
+	Boolean deleteUserById(int id);
+	Boolean updateUser(User user);
 	User checkLogin(User user);
+	int getUserIdByEmail(String email);
+	Boolean checkEmailAvailable(String email);
 }

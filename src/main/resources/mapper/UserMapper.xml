@@ -3,17 +3,49 @@
 
 <mapper namespace="com.jwat.mapper.UserMapper">
 	<select id="getListUser" resultMap="result">
-		SELECT * FROM USERS;
+		select * from users;
 	</select>
 
-	<update id="updateUser" parameterType="integer">
-		update users set
-		username = #{username},
-		password = #{password},
-		email = #{email},
-		where id = #{id}
-	</update>
+	<select id="getUserById" parameterType="int" resultMap="result" >
+        select * from users
+        where id = #{id};
+	</select>
+
+	<select id="checkLogin" parameterType="com.jwat.model.User" resultMap="result" >
+        select * from users
+		where email = #{email} and password = #{password};
+	</select>
+
+	<select id="getUserIdByEmail" parameterType="string" resultType="int" >
+        select id from users
+        where email = #{email};
+	</select>
+
+	<select id="checkEmailAvailable" parameterType="string" resultType="boolean" >
+        select count(id) from users
+        where email = #{email};
+	</select>
+	
+	<update id="updateUser" parameterType="com.jwat.model.User">
+        update users
+        set email = #{email},
+        password = #{password} 
+        where id = #{id}
+    </update>
+
+	<insert id="insertUser" parameterType="com.jwat.model.User">
+        insert into users(email, password, created_at)
+        values(#{email}, #{password}, curdate())
+	</insert>
+
+	<delete id="deleteUserById" parameterType="int">
+        delete from users where id = #{id}
+    </delete>
 
 	<resultMap id="result" type="com.jwat.model.User">
+		<result property = "id" column = "id"/>
+		<result property = "email" column = "email"/>
+		<result property = "password" column = "password"/>
+		<result property = "created_at" column = "created_at"/>
 	</resultMap>
 </mapper>
